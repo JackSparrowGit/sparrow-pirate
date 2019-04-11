@@ -19,7 +19,9 @@
         <java.version>1.8</java.version>
         <spring-cloud.version>Finchley.RELEASE</spring-cloud.version>
 
-        <docker.image.prefix></docker.image.prefix>
+        <docker.image.hub>registry.cn-shenzhen.aliyuncs.com</docker.image.hub>
+        <docker.image.namespace>jack-sparrow</docker.image.namespace>
+        <docker.image.prefix>${docker.image.hub}/${docker.image.namespace}</docker.image.prefix>
         <docker.image.tag>1.0.0</docker.image.tag>
 
         <spring-boot-admin-starter-client.version>2.0.2</spring-boot-admin-starter-client.version>
