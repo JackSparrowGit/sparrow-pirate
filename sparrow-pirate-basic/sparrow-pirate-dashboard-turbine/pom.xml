@@ -77,9 +77,9 @@
                                 <resource>
                                     <directory>src/main/resources/</directory>
                                     <filtering>false</filtering>
-                                    <includes>
+                                    <excludes>
                                         <include>*.yml</include>
-                                    </includes>
+                                    </excludes>
                                 </resource>
                             </resources>
                         </configuration>
@@ -96,9 +96,9 @@
                                 <resource>
                                     <directory>src/main/docker/</directory>
                                     <filtering>false</filtering>
-                                    <includes>
+                                    <excludes>
                                         <include>**/*.yml</include>
-                                    </includes>
+                                    </excludes>
                                 </resource>
                             </resources>
                         </configuration>
