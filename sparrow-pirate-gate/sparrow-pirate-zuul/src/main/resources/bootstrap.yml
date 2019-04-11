@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: sparrow-pirate-zuul
+  profiles:
+    active: ${ACTIVE_PROFILE:dev}
+  jackson:
+    time-zone: GMT+8
+    locale: zh_CN
+    serialization:
+      write-dates-as-timestamps: true
+
+
+info:
+  app:
+    name: ${spring.application.name}
+    description: ${spring.application.name} Application
+    version: @project.version@
+  project:
+    version: @project.version@

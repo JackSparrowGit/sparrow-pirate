@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.0.8.RELEASE</version>
+        <relativePath/>
+    </parent>
+    <groupId>com.corsair</groupId>
+    <artifactId>sparrow-pirate</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>sparrow-pirate</name>
+    <packaging>pom</packaging>
+    <description>This project for SpringCloud Corsair</description>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <spring-cloud.version>Finchley.RELEASE</spring-cloud.version>
+
+        <docker.image.prefix></docker.image.prefix>
+        <docker.image.tag>1.0.0</docker.image.tag>
+
+        <spring-boot-admin-starter-client.version>2.0.2</spring-boot-admin-starter-client.version>
+        <dockerfile-maven-plugin.version>1.3.4</dockerfile-maven-plugin.version>
+
+        <spring-security-oauth2.version>2.3.3.RELEASE</spring-security-oauth2.version>
+        <mybatis-plus-boot-starter.version>3.1.0</mybatis-plus-boot-starter.version>
+        <springfox-swagger2.version>2.9.2</springfox-swagger2.version>
+
+        <mybatis-plus.version>3.1.0</mybatis-plus.version>
+        <druid-spring-boot-starter.version>1.1.14</druid-spring-boot-starter.version>
+        <pagehelper-spring-boot-starter.version>1.2.10</pagehelper-spring-boot-starter.version>
+    </properties>
+
+    <developers>
+        <developer>
+            <name>jack</name>
+            <url>https://gitee.com/jack_pan</url>
+            <email>9874118@qq.com</email>
+        </developer>
+    </developers>
+
+    <modules>
+        <module>sparrow-pirate-beta</module>
+        <module>sparrow-pirate-basic</module>
+        <module>sparrow-pirate-core</module>
+        <module>sparrow-pirate-conf</module>
+        <module>sparrow-pirate-gate</module>
+        <module>sparrow-pirate-gamma</module>
+        <module>sparrow-pirate-generator</module>
+        <module>sparrow-pirate-alpha</module>
+        <module>sparrow-pirate-eureka</module>
+        <module>sparrow-pirate-oauth</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid</artifactId>
+                <version>1.1.14</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/com.alibaba/druid-spring-boot-starter -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>1.1.14</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper-spring-boot-starter</artifactId>
+                <version>${pagehelper-spring-boot-starter.version}</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger2 -->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-bean-validators</artifactId>
+                <version>${springfox-swagger2.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${springfox-swagger2.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${springfox-swagger2.version}</version>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/com.baomidou/mybatis-plus-boot-starter -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus-boot-starter.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.security.oauth</groupId>
+                <artifactId>spring-security-oauth2</artifactId>
+                <version>${spring-security-oauth2.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-starter-client</artifactId>
+                <version>${spring-boot-admin-starter-client.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+
+
+</project>

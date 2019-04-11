@@ -1,0 +1,14 @@
+# spring服务名称
+spring:
+  application:
+    name: ${APPLICATION_NAME:sparrow-pirate-alpha}
+
+
+# app info
+info:
+  app:
+    name: ${spring.application.name}
+    description: ${spring.application.name} Application
+    version: @project.version@
+  project:
+    version: @project.version@

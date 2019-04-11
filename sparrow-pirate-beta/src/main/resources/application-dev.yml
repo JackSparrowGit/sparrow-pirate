@@ -1,0 +1,14 @@
+spring:
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    database: mysql
+#    database-platform:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      jdbc-url: jdbc:mysql://localhost:3306/sparrow-oauth?useUnicode=true&characterEncoding=utf8&autoReconnect
+      driver-class-name:
+      username:
+      password:

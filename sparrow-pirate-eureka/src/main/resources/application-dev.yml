@@ -1,0 +1,21 @@
+# eureka配置
+eureka:
+  instance:
+    appname: ${spring.application.name}
+    hostname: localhost
+    # docker环境需要配置true,k8s环境false
+    prefer-ip-address: true
+  client:
+    fetch-registry: false
+    register-with-eureka: false
+    service-url:
+      defaultZone: ${REGISTRY_URLS:http://${eureka.instance.hostname}:${server.port}/eureka/}
+  server:
+    eviction-interval-timer-in-ms: 5000
+    # 开发环境开启自我保护
+    enable-self-preservation: false
+
+# 日志logging
+logging:
+  level:
+    com.corsair.sparrow.piarete: debug

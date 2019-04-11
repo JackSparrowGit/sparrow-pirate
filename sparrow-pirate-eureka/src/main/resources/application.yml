@@ -1,0 +1,24 @@
+# server端口
+server:
+  port: ${EUREKA_PORT:10000}
+
+
+# spring配置
+spring:
+  profiles:
+    active: ${ACTIVE_PROFILES:dev}
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    joda-date-time-format: yyyy-MM-dd HH:mm:ss
+    locale: zh_CN
+    time-zone: GMT+8
+
+# 暴露服务状态
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always

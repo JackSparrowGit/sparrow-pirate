@@ -1,0 +1,66 @@
+# eureka
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_SERVICE_URL:http://${EUREKA_HOST:localhost}:${EUREKA_PORT:10000}/eureka/}
+  instance:
+    prefer-ip-address: true
+    hostname: localhost
+
+# 数据源
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/sparrow-oauth?useUnicode=true&characterEncoding=utf8&useSSL=false
+      username: root
+      password: root
+      initial-size: 5
+      min-idle: 5
+      max-active: 20
+      max-wait: 60000
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 30000
+      validation-query: SELECT 1 FROM DUAL
+      validation-query-timeout: 5000
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      pool-prepared-statements: true
+      max-pool-prepared-statement-per-connection-size: 20
+      web-stat-filter:
+        enabled: true
+        url-pattern: /*
+        exclusions: "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*"
+      filters: stat
+      filter:
+        stat:
+          enabled: true
+          db-type: mysql
+          log-slow-sql: true
+          slow-sql-millis: 5000
+          connection-stack-trace-enable: true
+          merge-sql: true
+        wall:
+          enabled: true
+          db-type: mysql
+          config:
+            alter-table-allow: true
+            block-allow: true
+            call-allow: true
+            commit-allow: true
+            comment-allow: true
+            create-table-allow: true
+            delete-allow: true
+            delete-where-alway-true-check: true
+            update-allow: true
+  redis:
+    host: localhost
+    database: 0
+    port: 6379
+    password: 12345678
+# log
+logging:
+  level:
+    com.corsair: debug

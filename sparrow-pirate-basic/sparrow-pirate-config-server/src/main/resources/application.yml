@@ -1,0 +1,7 @@
+server:
+  port: 9991
+
+
+spring:
+  profiles:
+    active: ${ACTIVE_PROFILES:dev}

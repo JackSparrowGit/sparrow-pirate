@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: sparrow-pirate-gateway
+  jackson:
+    time-zone: GMT+8
+    locale: zh_CN
+    serialization:
+      write-dates-as-timestamps: true

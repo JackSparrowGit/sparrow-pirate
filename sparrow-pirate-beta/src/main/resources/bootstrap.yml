@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: sparrow-pirate-beta
+  jackson:
+    time-zone: GMT+8
+    locale: zh_CN
+    date-format: com.fasterxml.jackson.databind.util.StdDateFormat
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: *
+  endpoint:
+    health:
+      show-details: always

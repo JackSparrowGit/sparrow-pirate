@@ -1,0 +1,11 @@
+spring:
+  boot:
+    admin:
+      client:
+        enable: true
+        url: http://localhost:${server.port}
+      discovery:
+        enabled: true
+logging:
+  level:
+    com.corsair: debug

@@ -1,0 +1,39 @@
+server:
+  port: 8888
+
+spring:
+  profiles:
+    active: dev
+  jackson:
+    locale: zh_CN
+    time-zone: GMT+8
+    serialization:
+      write-dates-as-timestamps: true
+
+
+# mybatisPlus配置
+mybatis-plus:
+  mapper-locations: classpath*:mapper/*.xml
+  type-aliases-package: com.corsair.sparrow.pirate.alpha.domain.bean
+  #  type-handlers-package:
+  #  type-enums-package:
+  configuration:
+    cache-enabled: false
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    lazy-loading-enabled: true
+  global-config:
+    db-config:
+      db-type: mysql
+      id-type: id_worker
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+      field-strategy: default
+      table-underline: true
+
+
+# pagehelper分页插件
+pagehelper:
+  helper-dialect: mysql
+  params: count=countSql
+  support-methods-arguments: true

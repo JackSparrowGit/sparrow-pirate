@@ -1,0 +1,55 @@
+server:
+  port: 9999
+  http2:
+    enabled: true
+
+spring:
+  profiles:
+    active: dev
+
+feign:
+  httpclient:
+    enabled: false
+  okhttp:
+    enabled: true
+  compression:
+    request:
+      enable: true
+      mime-types: text/xml,application/xml,application/json
+      min-request-size: 2048
+    response:
+      enabled: true
+
+zuul:
+  prefix: /api
+  ignored-services: "*"
+  host:
+    connect-timeout-millis: 5000
+  # routes在配置动态网关后去除
+  routes:
+    alpha-service:
+      path: /alpha/**
+      serviceId: sparrow-pirate-alpha
+      sensitiveHeaders: true
+
+ribbon:
+  eureka:
+    enabled: true
+  ReadTimeout: 6000
+  ConnectTimeout: 6000
+  MaxAutoRetries: 0
+  MaxAutoRetriesNextServer: 1
+  OkToRetryOnAllOperations: false
+
+hystrix:
+  threadpool:
+    default:
+      coreSize: 1000
+      maxQueueSize: 1000
+      queueSizeRejectionThreshold: 500
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 24000

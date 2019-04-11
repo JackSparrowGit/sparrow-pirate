@@ -1,0 +1,12 @@
+server:
+  port: 7788
+
+spring:
+  application:
+    name: sparrow-pirate-dashboard-turbine
+
+turbine:
+  aggregator:
+    cluster-config: default
+  cluster-name-expression: new String("default")
+

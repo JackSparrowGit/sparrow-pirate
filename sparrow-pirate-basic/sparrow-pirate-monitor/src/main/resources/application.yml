@@ -1,0 +1,8 @@
+server:
+  port: 9050
+
+spring:
+  security:
+    user:
+      name: "admin"
+      password: "monitor"
