@@ -1,4 +1,4 @@
-FROM registry.cn-hangzhou.aliyuncs.com/nibo/oracle-jdk:jdk8u112
+FROM openjdk:8u111
 VOLUME /tmp
 ADD *.jar app.jar
 
