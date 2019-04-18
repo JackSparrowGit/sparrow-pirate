@@ -1,0 +1,12 @@
+server:
+  port: 9191
+
+spring:
+  application:
+    name: sparrow-pirate-gamma-server
+  profiles:
+    active: dev
+  jackson:
+    time-zone: GMT+8
+    locale: zh_CN
+    date-format: com.fasterxml.jackson.databind.util.StdDateFormat

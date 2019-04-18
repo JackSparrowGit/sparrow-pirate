@@ -1,8 +1,11 @@
-package com.corsair.sparrow.pirate.gamma.server;
+package com.corsair.sparrow.pirate.gamma;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+/**
+ * @author jack
+ */
 @SpringBootApplication
 public class SparrowPirateGammaServerApplication {
 

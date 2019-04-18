@@ -1,0 +1,19 @@
+spring:
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    database: mysql
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      jdbc-url: jdbc:mysql://localhost:3306/sparrow-gamma?useUnicode=true&characterEncoding=utf8&autoReconnect&useSSL=false
+      driver-class-name: com.mysql.jdbc.Driver
+      username: root
+      password: root
+
+thrift:
+  server:
+    host: # thrift host
+    port: # thrift 端口
+    zk-list: 127.0.0.1:2181   # 多个zookeeper地址用,隔开
