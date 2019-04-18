@@ -19,7 +19,6 @@
     </properties>
 
     <modules>
-        <module>sparrow-pirate-gamma-bean</module>
         <module>sparrow-pirate-gamma-api</module>
         <module>sparrow-pirate-gamma-server</module>
         <module>sparrow-pirate-gamma-web</module>

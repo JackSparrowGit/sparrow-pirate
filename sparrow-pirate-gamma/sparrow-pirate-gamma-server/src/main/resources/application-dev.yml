@@ -3,17 +3,37 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: update
+#      use-new-id-generator-mappings: false
+      naming:
+        physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
     database: mysql
+    # jpa不加这一句默认为engine=MyISAM
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    properties:
+      format_sql: true
+      hibernate:
+        enable_lazy_load_no_trans: true
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:mysql://localhost:3306/sparrow-gamma?useUnicode=true&characterEncoding=utf8&autoReconnect&useSSL=false
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: root
     hikari:
-      jdbc-url: jdbc:mysql://localhost:3306/sparrow-gamma?useUnicode=true&characterEncoding=utf8&autoReconnect&useSSL=false
-      driver-class-name: com.mysql.jdbc.Driver
-      username: root
-      password: root
+      connection-timeout: 20000
+      minimum-idle: 5
+      maximum-pool-size: 12
+      idle-timeout: 300000
+      max-lifetime: 1200000
+      auto-commit: true
+
 
 thrift:
   server:
-    host: # thrift host
-    port: # thrift 端口
+    host: localhost        # thrift host
+    port: 18001            # thrift 端口
     zk-list: 127.0.0.1:2181   # 多个zookeeper地址用,隔开
+
+logging:
+  level:
+    com.corsair.sparrow.pirate.gamma: debug

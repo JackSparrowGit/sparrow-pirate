@@ -3,6 +3,7 @@ package com.corsair.sparrow.pirate.gamma.service.impl;
 import com.corsair.sparrow.pirate.gamma.api.GammaDTO;
 import com.corsair.sparrow.pirate.gamma.api.GammaQuery;
 import com.corsair.sparrow.pirate.gamma.api.GammaThriftService;
+import com.corsair.sparrow.pirate.gamma.config.ThriftService;
 import com.corsair.sparrow.pirate.gamma.domain.bean.Gamma;
 import com.corsair.sparrow.pirate.gamma.repository.GammaRepository;
 import com.google.common.collect.Lists;
@@ -17,6 +18,7 @@ import java.util.Objects;
 /**
  * @author jack
  */
+@ThriftService(version="1.0.1", weight=3)
 @Service
 public class GammaThriftServiceImpl implements GammaThriftService.Iface{
 

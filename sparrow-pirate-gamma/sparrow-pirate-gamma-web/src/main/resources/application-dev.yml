@@ -1,0 +1,8 @@
+
+
+thrift:
+  server:
+    zk-list: 127.0.0.1:2181   # 多个zookeeper地址用,隔开
+logging:
+  level:
+    com.corsair.sparrow.pirate.gamma: debug

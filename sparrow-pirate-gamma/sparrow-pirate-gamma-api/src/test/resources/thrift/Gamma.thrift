@@ -1,6 +1,7 @@
 /*
   thrift文件生成java文件指令: thrift -gen java Gamma.thrift
   如果遇到生成后的文件有很多@Override 报错，只需要把idea右下角设为Syntax
+  如果是windows操作系统，需要携带thrift.exe
  */
 namespace java com.corsair.sparrow.pirate.gamma.api
 

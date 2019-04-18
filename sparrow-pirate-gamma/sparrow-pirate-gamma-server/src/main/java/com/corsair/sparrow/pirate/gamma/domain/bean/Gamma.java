@@ -16,13 +16,12 @@ public class Gamma implements Serializable {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    @Column(columnDefinition = "id")
     private Long id;
-    @Column(columnDefinition = "名称")
+    @Column(name = "name",columnDefinition = "名称")
     private String name;
-    @Column(name = "create_time",columnDefinition = "timestamp default current_timestamp comment '创建时间'")
-    private Date createTime;
-    @Column(name = "update_time",columnDefinition = "timestamp default current_timestamp comment '修改时间'",updatable = true)
-    private Date updateTime;
+//    @Column(name = "create_time",columnDefinition = "timestamp default current_timestamp comment '创建时间'")
+//    private Date createTime;
+//    @Column(name = "update_time",columnDefinition = "timestamp default current_timestamp comment '修改时间'",updatable = true)
+//    private Date updateTime;
 
 }
