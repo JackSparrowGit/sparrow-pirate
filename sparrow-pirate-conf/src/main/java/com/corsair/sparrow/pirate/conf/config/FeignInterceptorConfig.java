@@ -2,6 +2,7 @@ package com.corsair.sparrow.pirate.conf.config;
 
 import com.corsair.sparrow.pirate.conf.strategy.FeignHystrixConcurrencyStrategy;
 import com.corsair.sparrow.pirate.core.constant.GlobalConstant;
+import feign.Logger;
 import feign.RequestInterceptor;
 import feign.RequestTemplate;
 import lombok.extern.slf4j.Slf4j;
@@ -44,5 +45,18 @@ public class FeignInterceptorConfig implements RequestInterceptor {
         }
         log.info("feign请求拦截器携带token:{}",token);
         requestTemplate.header(GlobalConstant.TOKEN_NAME,token);
+    }
+
+    /**
+     * 设置feign log级别
+     *  NONE
+     *  HEADERS
+     *  BASIC
+     *  FULL
+     * @return
+     */
+    @Bean
+    Logger.Level feignLoggerLevel(){
+        return Logger.Level.FULL;
     }
 }
